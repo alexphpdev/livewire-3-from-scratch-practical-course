@@ -1,0 +1,21 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "binary_operator_spaces": {
+            "default": "align_single_space_minimal",
+            "operators": {
+                "=>": "align_single_space_minimal"
+            }
+        }
+    },
+    "exclude": [
+        "config"
+    ],
+    "notName": [
+        "*Request.php"
+    ],
+    "notPath": [
+        "app/Http/Middleware/TrustProxies.php",
+        "app/Http/Kernel.php"
+    ]
+}
