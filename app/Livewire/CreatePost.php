@@ -21,8 +21,8 @@ class CreatePost extends Component
         $this->validate();
 
         Post::create([
-            'title'         => $this->title,
-            'body'    => $this->body,
+            'title' => $this->title,
+            'body'  => $this->body,
         ]);
 
         $this->success = true;
