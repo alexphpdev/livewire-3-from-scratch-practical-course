@@ -20,6 +20,16 @@ class CreatePost extends Component
         $this->success = true;
     }
 
+    public function validateTitle(): void
+    {
+        $this->validateOnly('form.title');
+    }
+
+    public function validateBody(): void
+    {
+        $this->validateOnly('form.body');
+    }
+
     public function render()
     {
         return view('livewire.create-post');
