@@ -11,16 +11,16 @@ class PostForm extends Form
     public ?Post $post;
 
     #[Validate('required|min:5')]
-    public string $title = '';
+    public string $titleWithLongName = '';
 
     #[Validate('required|min:5')]
     public string $body = '';
 
     public function setPost(Post $post): void
     {
-        $this->post  = $post;
-        $this->title = $post->title;
-        $this->body  = $post->body;
+        $this->post              = $post;
+        $this->titleWithLongName = $post->title;
+        $this->body              = $post->body;
     }
 
     public function save(): void

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\PostForm;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class CreatePost extends Component
@@ -28,6 +29,11 @@ class CreatePost extends Component
     public function validateBody(): void
     {
         $this->validateOnly('form.body');
+    }
+
+    public function updatedFormTitleWithLongName(): void
+    {
+        $this->form->titleWithLongName = Str::headline($this->form->titleWithLongName);
     }
 
     public function render()
