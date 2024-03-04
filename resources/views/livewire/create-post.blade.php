@@ -1,4 +1,4 @@
-<div>
+<div class="p-6 text-gray-900 dark:text-gray-100">
     @if($success)
         <span class="block mb-4 text-green-500">Post saved successfully.</span>
     @endif

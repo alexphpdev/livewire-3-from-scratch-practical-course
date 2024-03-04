@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Livewire\Forms\PostForm;
 use App\Models\Post;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class EditPost extends Component
@@ -26,6 +27,7 @@ class EditPost extends Component
         $this->success = true;
     }
 
+    #[Title('Edit Post')]
     public function render()
     {
         return view('livewire.edit-post');
