@@ -12,6 +12,13 @@ class CreatePost extends Component
 
     public bool $success = false;
 
+    public string $saveButtonTitle = '';
+
+    public function mount(string $saveButtonTitle = 'Save'): void
+    {
+        $this->saveButtonTitle = $saveButtonTitle;
+    }
+
     public function save(): void
     {
         $this->validate();
