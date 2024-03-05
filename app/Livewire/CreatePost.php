@@ -28,9 +28,9 @@ class CreatePost extends Component
         $this->success = true;
     }
 
-    public function validateTitle(): void
+    public function validateTitleWithLongName(): void
     {
-        $this->validateOnly('form.title');
+        $this->validateOnly('form.titleWithLongName');
     }
 
     public function validateBody(): void

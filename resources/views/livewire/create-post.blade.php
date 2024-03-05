@@ -6,7 +6,7 @@
         <div>
             <label for="title" class="block font-medium text-sm text-gray-700">Title</label>
             <input id="title" wire:model="form.titleWithLongName" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm" type="text" />
-            <button type="button" wire:click="validateTitle" class="block mt-4 px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700">
+            <button type="button" wire:click="validateTitleWithLongName" class="block mt-4 px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700">
                 Validate title
             </button>
             @error('form.titleWithLongName')
