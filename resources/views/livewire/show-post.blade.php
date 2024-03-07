@@ -9,7 +9,15 @@
         <div class="block mt-1 w-full border-gray-300 rounded-md shadow-sm">{{$post->body}}</div>
     </div>
 
-    @if(mt_rand(0,1))
+    <p>Comments: {{ $commentsCount }}</p>
+
+    <livewire:create-comment :post="$post" />
+
+    <button type="button" wire:click="$toggle('showComments')" class="block mt-4 px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700">
+        Show/Hide comments
+    </button>
+
+    @if($showComments)
         <div class="mt-4">
             @foreach($this->comments() as $comment)
                 <div class="border-b-fuchsia-200 border-b-2 mb-3">
