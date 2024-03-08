@@ -13,6 +13,9 @@ class Posts extends Component
 
     public function render()
     {
+        // for show progressbar
+        sleep(3);
+
         $posts = Post::query()
             ->where('title', 'LIKE', "%$this->search%")
             ->paginate(10);

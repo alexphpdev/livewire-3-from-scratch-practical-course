@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('posts', Posts::class);
+    Route::get('posts', Posts::class)->name('posts.index');
     Route::get('posts/create', CreatePost::class);
     Route::get('posts/{post}/edit', EditPost::class);
     Route::get('posts/{post}', ShowPost::class)->name('posts.show');
