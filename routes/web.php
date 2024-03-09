@@ -5,6 +5,7 @@ use App\Livewire\CreatePost;
 use App\Livewire\EditPost;
 use App\Livewire\Posts;
 use App\Livewire\ShowPost;
+use App\Livewire\TodosList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,8 @@ Route::middleware('auth')->group(function () {
     Route::get('posts/create', CreatePost::class);
     Route::get('posts/{post}/edit', EditPost::class);
     Route::get('posts/{post}', ShowPost::class)->name('posts.show');
+
+    Route::get('todos', TodosList::class)->name('todos.index');
 });
 
 require __DIR__.'/auth.php';

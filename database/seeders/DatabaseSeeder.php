@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CommentSeeder::class,
+            TodoSeeder::class,
         ]);
     }
 }
