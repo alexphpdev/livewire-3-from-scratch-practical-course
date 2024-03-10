@@ -19,12 +19,7 @@
 
     @if($showComments)
         <div class="mt-4">
-            @foreach($this->comments() as $comment)
-                <div class="border-b-fuchsia-200 border-b-2 mb-3">
-                    <div><span class="font-bold">Email:</span> {{$comment->email}}</div>
-                    <div><span class="font-bold">Text:</span> {{$comment->text}}</div>
-                </div>
-            @endforeach
+            <livewire:show-comments :post="$post" lazy />
         </div>
     @endif
 </div>

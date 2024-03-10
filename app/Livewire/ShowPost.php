@@ -3,8 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use Illuminate\Support\Collection;
-use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -27,15 +25,6 @@ class ShowPost extends Component
     public function commentAdded(): void
     {
         $this->commentsCount++;
-    }
-
-    /**
-     * @return Collection
-     */
-    #[Computed]
-    public function comments(): Collection
-    {
-        return $this->post->comments()->fromNewToOld()->get();
     }
 
     public function render()
