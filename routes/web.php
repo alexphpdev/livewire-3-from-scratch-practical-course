@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Livewire\CreatePost;
 use App\Livewire\EditPost;
@@ -38,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('posts/{post}', ShowPost::class)->name('posts.show');
 
     Route::get('todos', TodosList::class)->name('todos.index');
+
+    Route::get('products', [ProductController::class, 'index']);
 });
 
 require __DIR__.'/auth.php';
