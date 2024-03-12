@@ -1,10 +1,23 @@
 <div class="space-y-6 min-w-full align-middle p-6">
+    <div class="space-x-8">
+        <input wire:model.live="searchQuery" type="search" id="search" placeholder="Search...">
+
+        <select wire:model.live="searchCategory" name="category" wire:key="{{ $searchQuery }}">
+            <option value="0">-- CHOOSE CATEGORY --</option>
+            @foreach($this->appropriateCategories() as $id => $category)
+                <option value="{{ $id }}">{{ $category }}</option>
+            @endforeach
+        </select>
+    </div>
     <div>
         <table class="min-w-full divide-y divide-gray-200 border">
             <thead>
             <tr>
                 <th class="px-6 py-3 bg-gray-50 text-left">
                     <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</span>
+                </th>
+                <th class="px-6 py-3 bg-gray-50 text-left">
+                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Category</span>
                 </th>
                 <th class="px-6 py-3 bg-gray-50 text-left">
                     <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Description</span>
@@ -19,6 +32,9 @@
                 <tr class="bg-white">
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
                         {{ $product->name }}
+                    </td>
+                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
+                        {{ $product->category->name }}
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
                         {{ $product->description }}
