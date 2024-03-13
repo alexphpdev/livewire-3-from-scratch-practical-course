@@ -54,6 +54,10 @@ class Products extends Component
             ->when($this->searchCategory > 0, fn(Builder $query) => $query->where('category_id', $this->searchCategory))
             ->paginate(10);
 
+        if ($this->searchQuery !== '' || $this->searchCategory > 0) {
+            sleep(2);
+        }
+
         return view('livewire.products', [
             'products' => $products,
         ]);

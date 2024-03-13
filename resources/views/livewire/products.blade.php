@@ -9,8 +9,9 @@
             @endforeach
         </select>
     </div>
+    <div class="text-red-600" wire:loading wire:target="searchQuery, searchCategory">Loading...</div>
     <div>
-        <table class="min-w-full divide-y divide-gray-200 border">
+        <table wire:loading.class="opacity-35" wire:target="searchQuery, searchCategory" class="min-w-full divide-y divide-gray-200 border">
             <thead>
             <tr>
                 <th class="px-6 py-3 bg-gray-50 text-left">
