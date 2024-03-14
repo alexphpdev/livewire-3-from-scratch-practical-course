@@ -47,6 +47,11 @@ class Products extends Component
         }
     }
 
+    public function deleteProduct(Product $product): void
+    {
+        $product->delete();
+    }
+
     public function render()
     {
         $products = Product::with('category')

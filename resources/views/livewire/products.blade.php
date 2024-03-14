@@ -44,7 +44,10 @@
                         <a href="#" class="inline-flex items-center px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
                             Edit
                         </a>
-                        <a href="#" class="inline-flex items-center px-4 py-2 bg-red-600 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
+                        <a
+                            wire:click="deleteProduct({{ $product->id }})"
+                            wire:confirm="Are you sure you want to delete this product with name '{{$product->name}}'?"
+                            href="#" class="inline-flex items-center px-4 py-2 bg-red-600 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
                             Delete
                         </a>
                     </td>
