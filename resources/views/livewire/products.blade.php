@@ -1,4 +1,5 @@
 <div class="space-y-6 min-w-full align-middle p-6">
+    <div class="flex justify-between">
     <div class="space-x-8">
         <input wire:model.live="searchQuery" type="search" id="search" placeholder="Search...">
 
@@ -8,6 +9,10 @@
                 <option value="{{ $id }}">{{ $category }}</option>
             @endforeach
         </select>
+    </div>
+        <a wire:navigate href="{{ route('products.create') }}" class="inline-flex items-center px-4 py-2 bg-gray-800 rounded-md font-semibold text-xs text-white uppercase tracking-widest">
+            Add new product
+        </a>
     </div>
     <div class="text-red-600" wire:loading wire:target="searchQuery, searchCategory">Loading...</div>
     <div>
