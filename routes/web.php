@@ -6,6 +6,7 @@ use App\Livewire\CreatePost;
 use App\Livewire\EditPost;
 use App\Livewire\Posts;
 use App\Livewire\ProductsCreate;
+use App\Livewire\ProductsEdit;
 use App\Livewire\ShowPost;
 use App\Livewire\TodosList;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('products', [ProductController::class, 'index']);
     Route::get('products/create', ProductsCreate::class)->name('products.create');
+    Route::get('products/{product}/edit', ProductsEdit::class)->name('products.edit');
 });
 
 require __DIR__.'/auth.php';
