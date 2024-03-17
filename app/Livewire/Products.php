@@ -57,6 +57,7 @@ class Products extends Component
         $products = Product::with('category')
             ->when($this->searchQuery !== '', fn(Builder $query) => $query->where('name', 'like', '%'. $this->searchQuery .'%'))
             ->when($this->searchCategory > 0, fn(Builder $query) => $query->where('category_id', $this->searchCategory))
+            ->orderByDesc('id')
             ->paginate(10);
 
         if ($this->searchQuery !== '' || $this->searchCategory > 0) {

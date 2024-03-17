@@ -13,6 +13,15 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
+        'color',
+        'in_stock',
+        'category_id',
+    ];
+
+    const array COLOR_LIST = [
+        'red' => 'Red',
+        'green' => 'Green',
+        'blue' => 'Blue',
     ];
 
     public function category(): BelongsTo

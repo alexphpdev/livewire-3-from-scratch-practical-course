@@ -15,6 +15,10 @@ class ProductsForm extends Form
     public string $description = '';
     #[Validate('required|exists:categories,id', as: 'category')]
     public int $category_id = 0;
+    #[Validate('required|string')]
+    public string $color = '';
+    #[Validate('boolean')]
+    public bool $in_stock = true;
 
     public function setProduct(Product $product): void
     {
@@ -22,6 +26,8 @@ class ProductsForm extends Form
         $this->name = $product->name;
         $this->description = $product->description;
         $this->category_id = $product->category_id;
+        $this->color = $product->color;
+        $this->in_stock = $product->in_stock;
     }
 
     public function save(): void
