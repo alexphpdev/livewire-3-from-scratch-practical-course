@@ -18,13 +18,13 @@
 
         <div class="mt-4">
             <label for="category">Category</label>
-            <select wire:model="form.category_id" name="category" id="category" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm">
+            <select multiple wire:model="form.productCategories" name="category" id="category" class="block mt-1 w-full border-gray-300 rounded-md shadow-sm">
             <option value="0">-- CHOOSE CATEGORY --</option>
                 @foreach($categories as $id => $category)
                     <option value="{{ $id }}">{{ $category }}</option>
                 @endforeach
             </select>
-            @error('form.category_id')
+            @error('form.productCategories')
             <span class="mt-2 text-sm text-red-600">{{ $message }}</span>
             @enderror
         </div>

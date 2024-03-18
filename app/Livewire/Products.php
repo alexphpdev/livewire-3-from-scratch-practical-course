@@ -34,7 +34,8 @@ class Products extends Component
 
         return Category::query()
             ->distinct()
-            ->join('products', 'categories.id', 'products.category_id')
+            ->join('category_product', 'categories.id', 'category_product.category_id')
+            ->join('products', 'category_product.product_id', 'products.id')
             ->where('products.name', 'like', '%'. $this->searchQuery .'%')
             ->orderBy('categories.name')
             ->pluck('categories.name', 'categories.id');
@@ -54,9 +55,13 @@ class Products extends Component
 
     public function render()
     {
-        $products = Product::with('category')
+        $products = Product::with('categories')
             ->when($this->searchQuery !== '', fn(Builder $query) => $query->where('name', 'like', '%'. $this->searchQuery .'%'))
-            ->when($this->searchCategory > 0, fn(Builder $query) => $query->where('category_id', $this->searchCategory))
+            ->when($this->searchCategory > 0, function (Builder $query) {
+                $query->whereHas('categories', function (Builder $query2) {
+                    $query2->where('id', $this->searchCategory);
+                });
+            })
             ->orderByDesc('id')
             ->paginate(10);
 

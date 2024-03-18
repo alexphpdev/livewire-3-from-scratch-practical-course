@@ -40,7 +40,9 @@
                         {{ $product->name }}
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
-                        {{ $product->category->name }}
+                        @foreach($product->categories as $category)
+                            <div>{{ $category->name }}@if(!$loop->last), @endif</div>
+                        @endforeach
                     </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
                         {{ $product->description }}

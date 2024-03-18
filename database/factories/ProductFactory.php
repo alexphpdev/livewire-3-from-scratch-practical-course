@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<Product>
  */
 class ProductFactory extends Factory
 {
@@ -17,12 +17,10 @@ class ProductFactory extends Factory
      */
     public function definition(): array
     {
-        $categories = Category::pluck('id');
-
         return [
-            'category_id' => $categories->random(),
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(50),
+            'color'       => array_rand(Product::COLOR_LIST),
         ];
     }
 }
