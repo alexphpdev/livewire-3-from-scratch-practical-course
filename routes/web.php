@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('todos', TodosList::class)->name('todos.index');
 
-    Route::get('products', [ProductController::class, 'index']);
+    Route::get('products', [ProductController::class, 'index'])->name('products.index');
     Route::get('products/create', ProductsCreate::class)->name('products.create');
     Route::get('products/{product}/edit', ProductsEdit::class)->name('products.edit');
 });

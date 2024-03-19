@@ -20,6 +20,9 @@
             <thead>
             <tr>
                 <th class="px-6 py-3 bg-gray-50 text-left">
+                    <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Image</span>
+                </th>
+                <th class="px-6 py-3 bg-gray-50 text-left">
                     <span class="text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</span>
                 </th>
                 <th class="px-6 py-3 bg-gray-50 text-left">
@@ -36,6 +39,11 @@
             <tbody class="bg-white divide-y divide-gray-200 divide-solid">
             @forelse($products as $product)
                 <tr class="bg-white">
+                    <td class="px-6 py-4">
+                        @if($product->photo)
+                            <img src="/storage/{{ $product->photo }}" class="w-20 h-20"  alt="{{ $product->name }}"/>
+                        @endif
+                    </td>
                     <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-900">
                         {{ $product->name }}
                     </td>

@@ -15,6 +15,7 @@
                     <x-nav-link wire:navigate :href="route('dashboard')" :active="request()->routeIs('dashboard')">{{ __('Dashboard') }}</x-nav-link>
                     <x-nav-link wire:navigate :href="route('posts.index')" :active="request()->routeIs('posts.index')">{{ __('Posts') }}</x-nav-link>
                     <x-nav-link wire:navigate :href="route('todos.index')" :active="request()->routeIs('todos.index')">{{ __('Todos') }}</x-nav-link>
+                    <x-nav-link wire:navigate :href="route('products.index')" :active="request()->routeIs('products.index')">{{ __('Products') }}</x-nav-link>
                 </div>
             </div>
 
@@ -70,6 +71,7 @@
             <x-responsive-nav-link wire:navigate :href="route('dashboard')" :active="request()->routeIs('dashboard')">{{ __('Dashboard') }}</x-responsive-nav-link>
             <x-responsive-nav-link wire:navigate :href="route('posts.index')" :active="request()->routeIs('posts.index')">{{ __('Posts') }}</x-responsive-nav-link>
             <x-responsive-nav-link wire:navigate :href="route('todos.index')" :active="request()->routeIs('todos.index')">{{ __('Todos') }}</x-responsive-nav-link>
+            <x-responsive-nav-link wire:navigate :href="route('products.index')" :active="request()->routeIs('products.index')">{{ __('Products') }}</x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
