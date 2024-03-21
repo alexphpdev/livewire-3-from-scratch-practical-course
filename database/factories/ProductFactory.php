@@ -21,6 +21,7 @@ class ProductFactory extends Factory
             'name'        => $this->faker->name(),
             'description' => $this->faker->text(50),
             'color'       => array_rand(Product::COLOR_LIST),
+            'price'       => $this->faker->randomFloat(2, 1, 100)
         ];
     }
 }

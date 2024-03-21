@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Livewire\CreatePost;
 use App\Livewire\Dropdowns;
 use App\Livewire\EditPost;
+use App\Livewire\ParentChildren;
 use App\Livewire\Posts;
 use App\Livewire\ProductsCreate;
 use App\Livewire\ProductsEdit;
@@ -47,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::get('products/create', ProductsCreate::class)->name('products.create');
     Route::get('products/{product}/edit', ProductsEdit::class)->name('products.edit');
     Route::get('dropdowns', Dropdowns::class)->name('dropdowns.index');
+    Route::get('product-list', ParentChildren::class)->name('parent-children.index');
 });
 
 require __DIR__.'/auth.php';
